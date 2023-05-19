@@ -1,0 +1,29 @@
+Sample data 
+https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2009-01.parquet
+
+Download the files and place in home folder of gcloud shell - import.sh
+
+Upload the Raw data to GCS bucket - copy from home folder to gcs bucket
+
+gsutil cp input/* gs://uber-data-analytics-raw/
+
+Data modelling - lucid chart
+https://lucid.app/lucidchart/5906fd18-09b5-4489-9c23-a4dbf66d728b/edit?viewport_loc=-412%2C-77%2C2455%2C1033%2C0_0&invitationId=inv_0db1a269-c038-46ba-a9d2-21f43340b970
+
+Convert Flat file to Dimensional modelling
+
+Model databases.jpeg
+
+To connect to GCS bucket through local spark using service account
+
+Inorder to use GCS bucket, we have to add the GCS bucket connector jar to the jars directory of 
+spark home folder
+
+If we are using dataproc cluster, then no need to specify any connectors
+
+
+using spark dataframe for transformation 
+
+
+
