@@ -22,8 +22,17 @@ spark home folder
 
 If we are using dataproc cluster, then no need to specify any connectors
 
-
 using spark dataframe for transformation 
+
+transformation.ipynb
+
+Data preparation is done ie fact and dimension tables
+
+now we have to do it in the ETL tool ie mage 
+
+on compute engine on GCP
+
+pip install mage-ai
 
 
 
