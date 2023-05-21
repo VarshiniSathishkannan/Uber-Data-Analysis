@@ -28,11 +28,27 @@ transformation.ipynb
 
 Data preparation is done ie fact and dimension tables
 
-now we have to do it in the ETL tool ie mage 
+now we have to do it in the ETL tool (Automate and schedule) ie mage 
 
 on compute engine on GCP
 
 pip install mage-ai
+
+mage start uberAnalysis 
+
+this will start 
+
+ http://localhost:6789 Mage will start in this port 
+ serving project /home/neeleshmgr/uberAnalysis
+
+ In GCP -  VM instance - we have to use external IP address and before that we have to create a firewall
+ rule to open this port 
+
+ mage is similar to airflow, We can create pipelines and schedule it. It is very simple to use 
+
+ It is not able to use large dataset since it is running on local setup on a single VM
+
+ I am going to use, Cloud composer - Managed Airflow instance 
 
 
 
