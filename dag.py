@@ -2,6 +2,11 @@ import airflow
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import timedelta
+from airflow.providers.google.cloud.operators.dataproc import (
+    DataprocCreateClusterOperator,
+    DataprocDeleteClusterOperator,
+    DataprocSubmitJobOperator,
+)
 
 default_args = {
     'owner':'Varshini',
@@ -17,12 +22,12 @@ default_args = {
 dag = DAG(
     'Uber_Data',
     default_args=default_args,
-    description='Extract Hackers News Full data',
+    description='Extract Uber data',
     schedule_interval="0 0 * * *"
 )
  # t1 - import data from https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page to GCS bucket 
  # if file already present, it should overwrite
- # bucket name = uber_data_analysis_raw_01 
+ # raw bucket = uber_data_analysis_raw_01 
  # Streaming insert - must provide object name as well
  # curl https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2009-01.parquet | gsutil cp - gs://uber_data_analysis_raw_01/input
 
@@ -34,3 +39,8 @@ t1 = BashOperator(
     bash_command='curl https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2009-01.parquet | gsutil cp - gs://uber_data_analysis_raw_01/input'
 )
 
+#t2 - tranform the input data and load to stage bucket 
+#stage bucket = uber_data_analysis_stage_01
+#cluster create job 
+
+t2 = 
